@@ -1114,3 +1114,133 @@ footer {
 #kontaktformular label[for="telefon"]::after {
     content: "";
 }
+.seo-section {
+    background: linear-gradient(to right bottom, #fff5e9, #f8f0e7);
+    padding: 5rem 2rem;
+    margin: 4rem 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 1px solid rgba(183, 62, 36, 0.1);
+    border-bottom: 1px solid rgba(183, 62, 36, 0.1);
+}
+
+.seo-section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 200px;
+    height: 200px;
+    background-color: rgba(183, 62, 36, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.seo-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.seo-text {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    transition: var(--transition);
+}
+
+.seo-text:hover {
+    transform: translateY(-5px);
+}
+
+.seo-text h2 {
+    color: var(--primary-color);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.75rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+
+.seo-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.seo-text:hover h2::after {
+    width: 100px;
+}
+
+.seo-text p {
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+}
+
+.seo-text p:last-of-type {
+    margin-bottom: 0;
+}
+
+.seo-text .hashtag {
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: var(--transition);
+    position: relative;
+    display: inline-block;
+}
+
+.seo-text .hashtag::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.seo-text .hashtag:hover::after {
+    width: 100%;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+    .seo-section {
+        padding: 4rem 1.5rem;
+        margin: 3rem 0;
+    }
+    
+    .seo-text h2 {
+        font-size: 2.25rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .seo-text p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .seo-section {
+        padding: 3rem 1rem;
+        margin: 2rem 0;
+    }
+    
+    .seo-text h2 {
+        font-size: 2rem;
+    }
+}
