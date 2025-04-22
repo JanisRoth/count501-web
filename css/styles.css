@@ -1,5 +1,6 @@
 /* Modern CSS Reset and Variables */
 :root {
+    /* Light Mode (Default) */
     --primary-color: #db4a2b;
     --bg-color: #e4e2dd;
     --text-color: black;
@@ -11,8 +12,42 @@
     --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     --border-radius: 8px;
     --transition: all 0.3s ease;
+    --quote-text-color: #333;
+    --quote-label-color: #666;
+    --footer-border-color: rgba(0, 0, 0, 0.2);
+    --input-border-color: rgba(0, 0, 0, 0.1);
+    --form-focus-shadow: 0 0 0 2px rgba(219, 74, 43, 0.2);
+    --menu-text-color: #e0e0e0;
+    --page-header-gradient: linear-gradient(to right, #db4a2b, #b62c0d);
+    --seo-bg-gradient: linear-gradient(to right bottom, #fff5e9, #f8f0e7);
+    --seo-border-color: rgba(183, 62, 36, 0.1);
+    --seo-circle-color: rgba(183, 62, 36, 0.05);
+    --hamburger-color: #e0e0e0;
 }
-  
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+    --primary-color: #db4a2b;
+    --bg-color: #121212;
+    --text-color: #e0e0e0;
+    --hover-color: #ff8066;
+    --button-bg: rgb(60, 60, 60);
+    --button-hover: rgb(80, 80, 80);
+    --card-bg: #1e1e1e;
+    --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    --quote-text-color: #d0d0d0;
+    --quote-label-color: #a0a0a0;
+    --footer-border-color: rgba(255, 255, 255, 0.1);
+    --input-border-color: rgba(255, 255, 255, 0.1);
+    --form-focus-shadow: 0 0 0 2px rgba(255, 99, 71, 0.4);
+    --menu-text-color: #e0e0e0;
+    --page-header-gradient: linear-gradient(to right, #db4a2b, #b62c0d);
+    --seo-bg-gradient: linear-gradient(to right bottom, #202020, #1a1a1a);
+    --seo-border-color: rgba(255, 99, 71, 0.2);
+    --seo-circle-color: rgba(255, 99, 71, 0.1);
+    --hamburger-color: #ffffff;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,8 +60,88 @@ body {
     background-color: var(--bg-color);
     color: var(--text-color);
     line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
-  
+
+/* Dark Mode Toggle */
+.theme-switch-wrapper {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+    border-radius: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: var(--transition);
+}
+
+.theme-switch-wrapper:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 24px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    background-color: white;
+    bottom: 4px;
+    content: "";
+    height: 16px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 16px;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--primary-color);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.slider:after {
+    color: white;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    position: absolute;
+    right: 8px;
+    top: 3px;
+}
+
+.theme-icon {
+    margin: 0 5px;
+    font-size: 18px;
+    color: white;
+}
+
 /* Navigation Styles */
 .nav-container {
     display: flex;
@@ -40,6 +155,7 @@ body {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
   
 .logo {
@@ -71,7 +187,7 @@ body {
 
 .menu a {
     text-decoration: none;
-    color: #e0e0e0;
+    color: var(--menu-text-color);
     font-size: 1.125rem;
     font-weight: 550;
     transition: all 0.3s ease;
@@ -86,7 +202,7 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #e0e0e0;
+    background-color: var(--menu-text-color);
     transition: width 0.3s ease;
 }
   
@@ -95,7 +211,7 @@ body {
 }
   
 .menu a:hover, .menu a.active {
-    color: #e0e0e0;
+    color: var(--menu-text-color);
     transform: translateY(-2px);
 }
   
@@ -105,7 +221,7 @@ body {
     display: none;
     background: none;
     border: none;
-    color: #e0e0e0;
+    color: var(--hamburger-color);
     font-size: 1.75rem;
     cursor: pointer;
     transition: color 0.3s ease;
@@ -203,7 +319,7 @@ body {
     font-weight: 400;
     letter-spacing: 4px;
     margin: 0;
-    color: #ff5722; /* Farbe passend zum Menü */
+    color: var(--primary-color);
 }
 
 .hero-description {
@@ -219,6 +335,12 @@ body {
 @media (max-width: 768px) {
     .hero-content {
         gap: 1rem;
+    }
+    
+    .theme-switch-wrapper {
+        top: auto;
+        bottom: 20px;
+        right: 20px;
     }
 }
   
@@ -245,27 +367,31 @@ body {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     font-weight: 300;
     line-height: 1.4;
-    color: #333;
+    color: var(--quote-text-color);
     margin: 0;
     padding: 0;
     position: relative;
+    transition: color 0.3s ease;
 }
   
 .quote-text::before {
     content: '"';
     font-size: 4rem;
-    color: #e0e0e0;
+    color: var(--primary-color);
+    opacity: 0.3;
     position: absolute;
     left: -2rem;
     top: -1rem;
+    transition: color 0.3s ease;
 }
   
 .quote-label {
     margin-top: 1.5rem;
     font-size: 1.125rem;
-    color: #666;
+    color: var(--quote-label-color);
     font-weight: 600;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
   
 /* Logo Bar */
@@ -279,6 +405,7 @@ body {
     align-items: center;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
 }
   
 .sliding-logos-container {
@@ -313,6 +440,7 @@ footer {
     background-color: var(--bg-color);
     padding: 3rem 0 2rem;
     color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
   
 .footer-container {
@@ -322,10 +450,11 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     padding: 1.5rem 1.5rem 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: 1px solid var(--footer-border-color);
     gap: 2rem;
     flex-wrap: wrap;
     text-align: center;
+    transition: border-color 0.3s ease;
 }
   
 .footer-section {
@@ -352,6 +481,8 @@ footer {
     position: relative;
     padding-bottom: 0.5rem;
     text-align: center;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
   
 .footer-section h3::after {
@@ -363,11 +494,14 @@ footer {
     width: 50px;
     height: 2px;
     background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
 }
   
 .footer-section p {
     margin: 0.75rem 0;
     font-size: 0.95rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
   
 .links-section ul, .social-section ul {
@@ -402,6 +536,11 @@ footer {
     width: 24px;
     height: 24px;
     transition: var(--transition);
+    filter: invert(var(--invert-icons, 0));
+}
+
+[data-theme="dark"] .social-icon {
+    --invert-icons: 1;
 }
 
 .social-icon:hover {
@@ -418,8 +557,9 @@ footer {
     align-items: center;
     color: white;
     text-align: center;
-    background-image: linear-gradient(to right, var(--primary-color), var(--hover-color));
+    background-image: var(--page-header-gradient);
     overflow: hidden;
+    transition: background-image 0.3s ease;
 }
 
 .page-header-overlay {
@@ -482,6 +622,7 @@ footer {
     color: var(--text-color);
     position: relative;
     display: inline-block;
+    transition: color 0.3s ease;
 }
 
 .about-intro h2::after, .project-intro h2::after, 
@@ -497,12 +638,15 @@ footer {
     width: 60px;
     height: 3px;
     background-color: var(--primary-color);
+    transition: background-color 0.3s ease;
 }
 
 .about-intro p, .project-intro p {
     font-size: 1.125rem;
     max-width: 700px;
     margin: 0 auto;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Team Members Section */
@@ -522,7 +666,7 @@ footer {
     border-radius: var(--border-radius);
     padding: 1.5rem;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: var(--transition), background-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
@@ -538,6 +682,7 @@ footer {
     overflow: hidden;
     margin: 0 auto 1.5rem;
     border: 3px solid var(--primary-color);
+    transition: border-color 0.3s ease;
 }
 
 .member-image img {
@@ -550,12 +695,14 @@ footer {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .member-role {
     color: var(--primary-color);
     font-weight: 600;
     margin-bottom: 1rem;
+    transition: color 0.3s ease;
 }
 
 /* Our Story Section */
@@ -575,6 +722,7 @@ footer {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease;
 }
 
 .story-image img {
@@ -592,6 +740,8 @@ footer {
     margin-bottom: 1.5rem;
     font-size: 1.125rem;
     line-height: 1.7;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Values Section */
@@ -612,7 +762,7 @@ footer {
     padding: 2rem 1.5rem;
     box-shadow: var(--card-shadow);
     text-align: center;
-    transition: var(--transition);
+    transition: var(--transition), background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .value-card:hover {
@@ -623,12 +773,15 @@ footer {
 .value-icon {
     font-size: 3rem;
     margin-bottom: 1rem;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 .value-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Project Info Page Styles */
@@ -644,7 +797,7 @@ footer {
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: var(--transition), background-color 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
@@ -664,12 +817,18 @@ footer {
 .feature-icon img {
     height: 100%;
     object-fit: contain;
+    filter: var(--feature-icon-filter, none);
+}
+
+[data-theme="dark"] .feature-icon img {
+    --feature-icon-filter: brightness(1.5);
 }
 
 .feature-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Tech Section */
@@ -689,6 +848,7 @@ footer {
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--card-shadow);
+    transition: box-shadow 0.3s ease;
 }
 
 .tech-image img {
@@ -706,6 +866,7 @@ footer {
     font-size: 1.75rem;
     margin-bottom: 1.5rem;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .tech-list {
@@ -716,9 +877,11 @@ footer {
 .tech-list li {
     padding: 0.75rem 0;
     font-size: 1.125rem;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--input-border-color);
     position: relative;
     padding-left: 2rem;
+    color: var(--text-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 .tech-list li:last-child {
@@ -731,6 +894,7 @@ footer {
     position: absolute;
     left: 0;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
 
 /* Implementation Process */
@@ -763,12 +927,14 @@ footer {
     font-size: 1.5rem;
     font-weight: bold;
     margin: 0 auto 1.5rem;
+    transition: background-color 0.3s ease;
 }
 
 .process-step h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Testimonials Section */
@@ -786,7 +952,7 @@ footer {
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: var(--transition), background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
@@ -800,15 +966,19 @@ footer {
     margin-bottom: 1.5rem;
     line-height: 1.7;
     position: relative;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .testimonial-content::before {
     content: '"';
     font-size: 4rem;
-    color: rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+    opacity: 0.2;
     position: absolute;
     left: -1.5rem;
     top: -1.5rem;
+    transition: color 0.3s ease;
 }
 
 .testimonial-author {
@@ -823,7 +993,6 @@ footer {
     border-radius: 50%;
     overflow: hidden;
 }
-
 .author-image img {
     width: 100%;
     height: 100%;
@@ -833,11 +1002,14 @@ footer {
 .author-info h4 {
     font-size: 1.125rem;
     margin-bottom: 0.25rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 .author-info p {
-    color: #666;
+    color: var(--quote-label-color);
     font-size: 0.95rem;
+    transition: color 0.3s ease;
 }
 
 /* CTA Section */
@@ -847,12 +1019,19 @@ footer {
     padding: 3rem 2rem;
     background-color: rgba(0, 0, 0, 0.03);
     border-radius: var(--border-radius);
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .cta-section {
+    background-color: rgba(255, 255, 255, 0.03);
 }
 
 .cta-section p {
     font-size: 1.125rem;
     max-width: 700px;
     margin: 1.5rem auto 2rem;
+    color: var(--text-color);
+    transition: color 0.3s ease;
 }
 
 /* Responsive Styles */
@@ -886,6 +1065,10 @@ footer {
         transition: right 0.3s ease;
         justify-content: flex-start;
         box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    [data-theme="dark"] .menu {
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
     }
     
     .menu.active {
@@ -969,12 +1152,16 @@ footer {
     background-color: var(--card-bg);
     border-radius: var(--border-radius);
     box-shadow: var(--card-shadow);
-    transition: transform 0.3s ease;
+    transition: var(--transition), background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 #formular-container:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] #formular-container:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .zentriert {
@@ -996,13 +1183,14 @@ footer {
     margin-bottom: 0.5rem;
     color: var(--text-color);
     display: block;
+    transition: color 0.3s ease;
 }
 
 #kontaktformular input, 
 #kontaktformular textarea {
     width: 100%;
     padding: 0.75rem 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--input-border-color);
     border-radius: 6px;
     font-family: 'Inter', sans-serif;
     font-size: 1rem;
@@ -1010,11 +1198,18 @@ footer {
     transition: all 0.3s ease;
 }
 
+[data-theme="dark"] #kontaktformular input, 
+[data-theme="dark"] #kontaktformular textarea {
+    background-color: #2d2d2d;
+    color: var(--text-color);
+    border-color: var(--input-border-color);
+}
+
 #kontaktformular input:focus, 
 #kontaktformular textarea:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(219, 74, 43, 0.2);
+    box-shadow: var(--form-focus-shadow);
 }
 
 #kontaktformular textarea {
@@ -1042,6 +1237,10 @@ footer {
     background-color: var(--hover-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] #kontaktformular button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 #kontaktformular button:active {
@@ -1079,6 +1278,14 @@ footer {
     100% { background-color: #fff; }
 }
 
+[data-theme="dark"] {
+    @keyframes fieldFocus {
+        0% { background-color: #2d2d2d; }
+        50% { background-color: rgba(255, 99, 71, 0.1); }
+        100% { background-color: #2d2d2d; }
+    }
+}
+
 #kontaktformular input:focus, 
 #kontaktformular textarea:focus {
     animation: fieldFocus 1s ease;
@@ -1093,6 +1300,11 @@ footer {
     font-weight: 500;
     border-radius: 6px;
     background-color: rgba(46, 204, 113, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .form-success {
+    background-color: rgba(46, 204, 113, 0.2);
 }
 
 .form-error {
@@ -1103,25 +1315,34 @@ footer {
     font-weight: 500;
     border-radius: 6px;
     background-color: rgba(231, 76, 60, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .form-error {
+    background-color: rgba(231, 76, 60, 0.2);
 }
 
 /* Optional: Required field indicator styling */
 #kontaktformular label::after {
     content: " *";
     color: var(--primary-color);
+    transition: color 0.3s ease;
 }
 
 #kontaktformular label[for="telefon"]::after {
     content: "";
 }
+
+/* SEO Section */
 .seo-section {
-    background: linear-gradient(to right bottom, #fff5e9, #f8f0e7);
+    background: var(--seo-bg-gradient);
     padding: 5rem 2rem;
     margin: 4rem 0;
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgba(183, 62, 36, 0.1);
-    border-bottom: 1px solid rgba(183, 62, 36, 0.1);
+    border-top: 1px solid var(--seo-border-color);
+    border-bottom: 1px solid var(--seo-border-color);
+    transition: background 0.3s ease, border-color 0.3s ease;
 }
 
 .seo-section::before {
@@ -1131,9 +1352,10 @@ footer {
     right: -50px;
     width: 200px;
     height: 200px;
-    background-color: rgba(183, 62, 36, 0.05);
+    background-color: var(--seo-circle-color);
     border-radius: 50%;
     z-index: 0;
+    transition: background-color 0.3s ease;
 }
 
 .seo-section .container {
@@ -1162,6 +1384,7 @@ footer {
     letter-spacing: 1px;
     position: relative;
     display: inline-block;
+    transition: color 0.3s ease;
 }
 
 .seo-text h2::after {
@@ -1173,7 +1396,7 @@ footer {
     width: 60px;
     height: 3px;
     background-color: var(--primary-color);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .seo-text:hover h2::after {
@@ -1187,6 +1410,7 @@ footer {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     font-weight: 400;
+    transition: color 0.3s ease;
 }
 
 .seo-text p:last-of-type {
@@ -1196,7 +1420,7 @@ footer {
 .seo-text .hashtag {
     color: var(--primary-color);
     font-weight: 600;
-    transition: var(--transition);
+    transition: var(--transition), color 0.3s ease;
     position: relative;
     display: inline-block;
 }
@@ -1209,14 +1433,14 @@ footer {
     width: 0;
     height: 2px;
     background-color: var(--primary-color);
-    transition: width 0.3s ease;
+    transition: width 0.3s ease, background-color 0.3s ease;
 }
 
 .seo-text .hashtag:hover::after {
     width: 100%;
 }
 
-/* Responsive styling */
+/* Responsive styling for SEO section */
 @media (max-width: 768px) {
     .seo-section {
         padding: 4rem 1.5rem;
@@ -1242,5 +1466,77 @@ footer {
     
     .seo-text h2 {
         font-size: 2rem;
+    }
+}
+
+/* Dark Mode Scroll Bar Styles */
+[data-theme="dark"] ::-webkit-scrollbar {
+    width: 12px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 6px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
+    background: var(--hover-color);
+}
+
+/* Accessibility Improvements */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+        animation: none !important;
+    }
+    
+    .sliding-logos-container {
+        animation: none !important;
+    }
+}
+
+/* Focus styles for keyboard navigation */
+a:focus, button:focus, input:focus, textarea:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    body {
+        background-color: white !important;
+        color: black !important;
+    }
+    
+    .nav-container, .burger-menu, .theme-switch-wrapper, 
+    .footer-container, .logo-bar, .cta-button {
+        display: none !important;
+    }
+    
+    .hero, .page-header {
+        height: auto !important;
+        color: black !important;
+        background: none !important;
+    }
+    
+    .hero-overlay, .page-header-overlay {
+        display: none !important;
+    }
+    
+    .content-section {
+        padding: 1rem 0 !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+    
+    .card-shadow, .box-shadow {
+        box-shadow: none !important;
     }
 }

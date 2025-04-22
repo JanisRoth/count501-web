@@ -31,6 +31,42 @@
                 <a href="./contact.html">Contact</a>
             </div>
 
+            <div class="theme-switch-wrapper">
+                <span class="theme-icon">🌞</span> <!-- Icon for Light mode -->
+                <label class="theme-switch">
+                    <input type="checkbox" id="theme-toggle" />
+                    <span class="slider"></span>
+                </label>
+                <span class="theme-icon">🌙</span> <!-- Icon for Dark mode -->
+            </div>
+            
+            <script>
+                const toggleButton = document.getElementById('theme-toggle');
+              
+                // Check the saved theme or system preference and apply the appropriate theme on page load
+                document.addEventListener('DOMContentLoaded', () => {
+                  const savedTheme = localStorage.getItem('theme');
+                  if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                    document.body.setAttribute('data-theme', 'dark');
+                    toggleButton.checked = true;
+                  } else {
+                    document.body.removeAttribute('data-theme');
+                    toggleButton.checked = false;
+                  }
+                });
+              
+                // Toggle theme on switch change and save the preference
+                toggleButton.addEventListener('change', () => {
+                  if (toggleButton.checked) {
+                    document.body.setAttribute('data-theme', 'dark');
+                    localStorage.setItem('theme', 'dark');
+                  } else {
+                    document.body.removeAttribute('data-theme');
+                    localStorage.setItem('theme', 'light');
+                  }
+                });
+            </script>              
+
             <button class="burger-menu" onclick="toggleMenu()">&#9776;</button>
         </div>
 
