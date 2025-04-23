@@ -1,6 +1,4 @@
-/* Modern CSS Reset and Variables */
 :root {
-    /* Light Mode (Default) */
     --primary-color: #db4a2b;
     --bg-color: #e4e2dd;
     --text-color: black;
@@ -25,7 +23,6 @@
     --hamburger-color: #e0e0e0;
 }
 
-/* Dark Mode Variables */
 [data-theme="dark"] {
     --primary-color: #db4a2b;
     --bg-color: #121212;
@@ -63,7 +60,6 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Dark Mode Toggle */
 .theme-switch-wrapper {
     position: fixed;
     top: 100px;
@@ -142,7 +138,6 @@ input:checked + .slider:before {
     color: white;
 }
 
-/* Navigation Styles */
 .nav-container {
     display: flex;
     align-items: center;
@@ -233,7 +228,6 @@ input:checked + .slider:before {
     color: var(--hover-color);
 }
   
-/* CTA Button */
 .cta-button {
     display: flex;
     justify-content: center;
@@ -261,7 +255,6 @@ input:checked + .slider:before {
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
   
-/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
@@ -331,7 +324,6 @@ input:checked + .slider:before {
     font-family: 'Bebas Neue', sans-serif;
 }
 
-/* Media Query für Mobile */
 @media (max-width: 768px) {
     .hero-content {
         gap: 1rem;
@@ -344,7 +336,6 @@ input:checked + .slider:before {
     }
 }
   
-/* Quote Section */
 .quote-container {
     max-width: 800px;
     margin: 5rem auto;
@@ -394,7 +385,6 @@ input:checked + .slider:before {
     transition: color 0.3s ease;
 }
   
-/* Logo Bar */
 .logo-bar {
     width: 100%;
     height: 60px;
@@ -435,7 +425,6 @@ input:checked + .slider:before {
     filter: brightness(1.05);
 }
   
-/* Footer */
 footer {
     background-color: var(--bg-color);
     padding: 3rem 0 2rem;
@@ -547,7 +536,6 @@ footer {
     transform: scale(1.2);
 }
 
-/* Page Header for inner pages */
 .page-header {
     position: relative;
     width: 100%;
@@ -592,14 +580,12 @@ footer {
     color: rgba(255, 255, 255, 0.9);
 }
 
-/* Content Sections */
 .content-section {
     padding: var(--section-padding);
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* About Us Page Styles */
 .about-container {
     display: flex;
     flex-direction: column;
@@ -649,7 +635,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Team Members Section */
 .team-members {
     display: flex;
     justify-content: center;
@@ -705,7 +690,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Our Story Section */
 .story-content {
     display: flex;
     align-items: center;
@@ -744,7 +728,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Values Section */
 .values-container {
     display: flex;
     justify-content: center;
@@ -784,7 +767,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Project Info Page Styles */
 .feature-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -831,7 +813,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Tech Section */
 .tech-showcase {
     display: flex;
     align-items: center;
@@ -897,7 +878,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Implementation Process */
 .process-steps {
     display: flex;
     justify-content: space-between;
@@ -937,7 +917,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Testimonials Section */
 .testimonials-container {
     display: flex;
     gap: 2rem;
@@ -1012,7 +991,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* CTA Section */
 .cta-section {
     text-align: center;
     margin-top: 4rem;
@@ -1034,7 +1012,6 @@ footer {
     transition: color 0.3s ease;
 }
 
-/* Responsive Styles */
 @media (max-width: 1024px) {
     .menu {
         position: relative;
@@ -1144,7 +1121,6 @@ footer {
     }
 }
 
-/* Contact Form Styling */
 #formular-container {
     max-width: 700px;
     margin: 4rem auto;
@@ -1247,7 +1223,6 @@ footer {
     transform: translateY(0);
 }
 
-/* Responsive adjustments */
 @media (max-width: 768px) {
     #formular-container {
         padding: 2rem 1.5rem;
@@ -1271,7 +1246,6 @@ footer {
     }
 }
 
-/* Optional: Form field animations */
 @keyframes fieldFocus {
     0% { background-color: #fff; }
     50% { background-color: rgba(219, 74, 43, 0.05); }
@@ -1291,7 +1265,6 @@ footer {
     animation: fieldFocus 1s ease;
 }
 
-/* Optional: Success/error styling */
 .form-success {
     color: #2ecc71;
     text-align: center;
@@ -1322,7 +1295,6 @@ footer {
     background-color: rgba(231, 76, 60, 0.2);
 }
 
-/* Optional: Required field indicator styling */
 #kontaktformular label::after {
     content: " *";
     color: var(--primary-color);
@@ -1333,7 +1305,6 @@ footer {
     content: "";
 }
 
-/* SEO Section */
 .seo-section {
     background: var(--seo-bg-gradient);
     padding: 5rem 2rem;
@@ -1440,7 +1411,6 @@ footer {
     width: 100%;
 }
 
-/* Responsive styling for SEO section */
 @media (max-width: 768px) {
     .seo-section {
         padding: 4rem 1.5rem;
@@ -1469,7 +1439,6 @@ footer {
     }
 }
 
-/* Dark Mode Scroll Bar Styles */
 [data-theme="dark"] ::-webkit-scrollbar {
     width: 12px;
 }
@@ -1487,7 +1456,6 @@ footer {
     background: var(--hover-color);
 }
 
-/* Accessibility Improvements */
 @media (prefers-reduced-motion: reduce) {
     * {
         transition: none !important;
@@ -1499,13 +1467,11 @@ footer {
     }
 }
 
-/* Focus styles for keyboard navigation */
 a:focus, button:focus, input:focus, textarea:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
 }
 
-/* Print styles */
 @media print {
     body {
         background-color: white !important;
