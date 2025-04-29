@@ -69,7 +69,7 @@ const eingabe = textAnliegen.value.toLowerCase();
 for (const wort of verboteneWörter) {
     if (eingabe.includes(wort)) {
     e.preventDefault();
-    warnung.textContent = `Bitte verwende keine beleidigenden oder diskriminierenden Begriffe.`;
+    warnung.textContent = `Please do not use offensive or discriminatory language.`;
     return;
     }
 }
