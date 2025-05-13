@@ -21,6 +21,70 @@
         <meta name="keywords" content="dart counter online, 501 dart scorer, dart statistics tracker, dart checkout calculator, online dart scoreboard, darts average calculator, dart scoring app, free dart counter, mobile dart scorer, dart checkout percentage, count501">
         <meta name="author" content="Janis Roth">
 
+        <style>
+            #cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            background: #fff5e9;
+            border: 2px solid #b73e24;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            z-index: 1000;
+            padding: 1rem;
+            font-family: Arial, sans-serif;
+            color: #222;
+            animation: fadeIn 0.5s ease-in-out;
+            }
+        
+            .cookie-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            text-align: center;
+            }
+        
+            .cookie-link {
+            color: #b73e24;
+            text-decoration: underline;
+            font-weight: 500;
+            }
+        
+            .cookie-buttons button {
+            background-color: #b73e24;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.2s ease-in-out;
+            }
+        
+            .cookie-buttons button:hover {
+            background-color: #922d19;
+            }
+        
+            @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+            }
+        </style>
+        
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            if (!localStorage.getItem("cookiesAccepted")) {
+                document.getElementById("cookie-banner").style.display = "block";
+            }
+        
+            document.getElementById("accept-cookies").addEventListener("click", () => {
+                localStorage.setItem("cookiesAccepted", "true");
+                document.getElementById("cookie-banner").style.display = "none";
+            });
+            });
+        </script> 
     </head>
     <body>
         <div class="nav-container">
@@ -84,6 +148,9 @@
                 <h1 class="brand-name">COUNT501</h1>
                 <div class="tagline">TRACK. IMPROVE. WIN.</div>
                 <p class="hero-description">THE SMART WAY TO PLAY DARTS</p>
+                <div class="cta-button">
+                    <a href="./html/contact.html" class="button">REQUEST BETA ACCESS</a>
+                </div>
             </div>
         </section>
 
@@ -214,71 +281,6 @@
                 <button id="accept-cookies">Accept</button>
             </div>
             </div>
-        </div>
-        
-        <style>
-            #cookie-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: #fff5e9;
-            border: 2px solid #b73e24;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            border-radius: 12px;
-            z-index: 1000;
-            padding: 1rem;
-            font-family: Arial, sans-serif;
-            color: #222;
-            animation: fadeIn 0.5s ease-in-out;
-            }
-        
-            .cookie-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            text-align: center;
-            }
-        
-            .cookie-link {
-            color: #b73e24;
-            text-decoration: underline;
-            font-weight: 500;
-            }
-        
-            .cookie-buttons button {
-            background-color: #b73e24;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.2s ease-in-out;
-            }
-        
-            .cookie-buttons button:hover {
-            background-color: #922d19;
-            }
-        
-            @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-            }
-        </style>
-        
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-            if (!localStorage.getItem("cookiesAccepted")) {
-                document.getElementById("cookie-banner").style.display = "block";
-            }
-        
-            document.getElementById("accept-cookies").addEventListener("click", () => {
-                localStorage.setItem("cookiesAccepted", "true");
-                document.getElementById("cookie-banner").style.display = "none";
-            });
-            });
-        </script>  
+        </div> 
     </body>
 </html>
