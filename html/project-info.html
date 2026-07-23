@@ -1,312 +1,101 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C48WNMCT8H"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-C48WNMCT8H');
-        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Project Information | count501</title>
-        <link rel="icon" href="../img/Logoback.png" type="image/x-icon">
+        <meta name="description" content="Discover how count501 makes darts scoring and performance analysis more useful.">
+        <meta name="theme-color" content="#0d0d0c">
+        <title>Product — count501</title>
+        <link rel="icon" href="../img/Logoback.png">
         <link rel="stylesheet" href="../css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <script src="../js/script.js" defer></script>
     </head>
     <body>
-        <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../img/Logoback.png" alt="Logo">
-            </a>
-
-            <div class="menu" id="navLinks">
-                <a href="../index.html">Home</a>
-                <a href="./about-us.html">About us</a>
-                <a href="./project-info.html" class="active">Project Information</a>
-                <a href="./contact.html">Contact</a>
-            </div>
-
-            <div class="theme-switch-wrapper">
-                <span class="theme-icon">🌞</span> <!-- Icon for Light mode -->
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle" />
-                    <span class="slider"></span>
-                </label>
-                <span class="theme-icon">🌙</span> <!-- Icon for Dark mode -->
-            </div>
-            
-            <script>
-                const toggleButton = document.getElementById('theme-toggle');
-              
-                // Check the saved theme or system preference and apply the appropriate theme on page load
-                document.addEventListener('DOMContentLoaded', () => {
-                  const savedTheme = localStorage.getItem('theme');
-                  if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    toggleButton.checked = true;
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    toggleButton.checked = false;
-                  }
-                });
-              
-                // Toggle theme on switch change and save the preference
-                toggleButton.addEventListener('change', () => {
-                  if (toggleButton.checked) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                  }
-                });
-            </script>
-
-            <button class="burger-menu" onclick="toggleMenu()">&#9776;</button>
-        </div>
-
-        <section class="page-header">
-            <div class="page-header-overlay"></div>
-            <div class="page-header-content">
-                <h1>Project Information</h1>
-                <p>Innovative technologies for the dart game</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="project-container">
-                <div class="project-intro">
-                    <h2>The count501 System</h2>
-                    <p>Our revolutionary dart scoring and analysis system combines computer intelligence, machine learning, and user-friendly interfaces to transform how darts is played, scored, and enjoyed.</p>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header">
+            <nav class="nav-container" aria-label="Primary navigation">
+                <a href="../index.html" class="logo" aria-label="count501 home"><img src="../img/count501-wordmark.svg" alt="count501"></a>
+                <div class="menu" id="navLinks"><a href="../index.html">Home</a><a href="./about-us.html">About</a><a href="./project-info.html" class="active" aria-current="page">Product</a><a href="./contact.html">Contact</a></div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" aria-label="Switch color theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                    </button>
+                    <a href="./contact.html" class="button">Get beta access</a>
+                    <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
                 </div>
+            </nav>
+        </header>
 
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="../img/computerintelligence.jpg" alt="Computer Intelligence">
-                        </div>
-                        <h3>Computer Intelligence</h3>
-                        <p>With the use of modern technologies, enabling players to feel the performance of count501.<p>
-                    </div>
+        <main id="main">
+            <section class="page-hero">
+                <div class="container">
+                    <span class="eyebrow">The count501 system</span>
+                    <h1>Scoring is only<br><span class="accent">the beginning.</span></h1>
+                    <p>One focused platform for live 501 games, meaningful statistics and a clearer view of your progress.</p>
+                </div>
+            </section>
 
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="../img/statisticanalystics.jpg" alt="Performance Analytics">
-                        </div>
-                        <h3>Performance Analytics</h3>
-                        <p>Comprehensive statistics and visualizations to help players analyze and improve their game.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="../img/multiplayer.jpg" alt="Multi-Player Support">
-                        </div>
-                        <h3>Multi-Player Support</h3>
-                        <p>Seamlessly manage games with any number of players, tracking scores and statistics for everyone.</p>
-                    </div>
-
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <img src="../img/gamemodes.jpg" alt="Game Modes">
-                        </div>
-                        <h3>Game Modes</h3>
-                        <p>Enjoy classic 501, cricket, and a variety of other game modes with automated scoring.</p>
+            <section class="section">
+                <div class="container project-showcase">
+                    <div class="project-image reveal"><img src="../img/gamemodes.jpg" alt="Darts player using a score display"></div>
+                    <div class="reveal">
+                        <span class="eyebrow">The experience</span>
+                        <h2>Stay in the game.</h2>
+                        <p class="muted" style="margin-top:24px">count501 handles the structure around your match so you can focus on throwing. Enter scores quickly, follow legs and sets, undo mistakes and review the result when the last double lands.</p>
+                        <ul class="check-list"><li>Clear turn-by-turn scoring</li><li>Legs, sets and automatic player rotation</li><li>Bust and double-out logic</li><li>Match history for every registered player</li></ul>
                     </div>
                 </div>
+            </section>
 
-                <div class="tech-section">
-                    <h2>Technology Behind count501</h2>
-                    <div class="tech-showcase">
-                        <div class="tech-image">
-                            <img src="../img/Logofront.png" alt="count501 Technology">
-                        </div>
-                        <div class="tech-details">
-                            <h3>Cutting-Edge Components</h3>
-                            <ul class="tech-list">
-                                <li>Real-time processing for instant feedback</li>
-                                <li>Cloud integration for storing game history and statistics</li>
-                                <li>Intuitive user interface for all skill levels</li>
-                                <li>Custom ML algorithms trained on thousands of dart throws</li>
-                            </ul>
-                        </div>
+            <section class="section visual-section">
+                <div class="container visual-grid">
+                    <div class="visual-copy reveal">
+                        <span class="eyebrow">Actionable analytics</span>
+                        <h2>Your performance,<br>made readable.</h2>
+                        <p>Numbers only matter when they create context. count501 tracks the essentials and presents them in a way that makes comparison and improvement natural.</p>
+                    </div>
+                    <div class="analytics-panel reveal">
+                        <div class="metric wide"><span class="metric-label">Scoring consistency · recent form</span><div class="bar-chart" aria-hidden="true"><span style="height:48%;--i:1"></span><span style="height:67%;--i:2"></span><span style="height:59%;--i:3"></span><span style="height:72%;--i:4"></span><span style="height:66%;--i:5"></span><span style="height:84%;--i:6"></span><span style="height:79%;--i:7"></span><span style="height:94%;--i:8"></span></div></div>
+                        <div class="metric"><span class="metric-label">First nine</span><strong class="metric-value">74<small>.2</small></strong></div>
+                        <div class="metric"><span class="metric-label">Checkout rate</span><strong class="metric-value">32<small>%</small></strong></div>
                     </div>
                 </div>
+            </section>
 
-                <div class="implementation-section">
-                    <h2>Implementation Process</h2>
-                    <div class="process-steps">
-                        <div class="process-step">
-                            <div class="step-number">1</div>
-                            <h3>Assessment</h3>
-                            <p>We evaluate your venue and requirements to design the optimal setup.</p>
-                        </div>
-
-                        <div class="process-step">
-                            <div class="step-number">2</div>
-                            <h3>Installation</h3>
-                            <p>With a easy and free download on every platform and web-accessibility you can easily use our app.<p>
-                        </div>
-
-                        <div class="process-step">
-                            <div class="step-number">3</div>
-                            <h3>Calibration</h3>
-                            <p>We fine-tune the system for your specific environment to ensure accuracy.</p>
-                        </div>
-
-                        <div class="process-step">
-                            <div class="step-number">4</div>
-                            <h3>Training</h3>
-                            <p>Comprehensive training for staff and regular users on system operation.</p>
-                        </div>
-
-                        <div class="process-step">
-                            <div class="step-number">5</div>
-                            <h3>Support</h3>
-                            <p>Ongoing technical support and regular software updates included.</p>
-                        </div>
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading reveal"><div><span class="eyebrow">How it comes together</span><h2>Simple by design.<br>Strong underneath.</h2></div><p>The product is developed in short feedback loops with real play at the center.</p></div>
+                    <div class="process-grid">
+                        <article class="process-card reveal"><span>01 — Play</span><h3>Start a match</h3><p>Choose players and match format, then begin scoring in seconds.</p></article>
+                        <article class="process-card reveal"><span>02 — Track</span><h3>Capture every visit</h3><p>Scores, turns and match state stay synchronized while you play.</p></article>
+                        <article class="process-card reveal"><span>03 — Learn</span><h3>Review the story</h3><p>See averages, checkout performance and long-term progress after the game.</p></article>
                     </div>
                 </div>
+            </section>
 
-                <br><br>
-
-                <div class="testimonials-section">
-                    <h2>What Professionals Say</h2>
-                    <div class="testimonials-container">
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"count501 has completely transformed how I practice. The analytics have helped me identify and improve weaknesses in my game."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="../img/matthiaswagner.png" alt="Testimonial Author">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Matthias Wagner</h4>
-                                    <p>Ambitioned Darts Player</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="testimonial-card">
-                            <div class="testimonial-content">
-                                <p>"We've installed count501 in our venue, and it's been a game-changer. Our customers love the experience, and it's increased our dart revenue significantly."</p>
-                            </div>
-                            <div class="testimonial-author">
-                                <div class="author-image">
-                                    <img src="../img/laurahoffmann.png" alt="Testimonial Author">
-                                </div>
-                                <div class="author-info">
-                                    <h4>Laura Hoffmann</h4>
-                                    <p>Venue Owner</p>
-                                </div>
-                            </div>
-                        </div>
+            <section class="section-tight">
+                <div class="container">
+                    <div class="section-heading reveal"><div><span class="eyebrow">Early feedback</span><h2>Made with players,<br>not just for them.</h2></div></div>
+                    <div class="testimonial-grid">
+                        <blockquote class="testimonial-card reveal"><p>“The interface makes scoring feel immediate. Nothing distracts from the match.”</p><footer>Ambitious league player</footer></blockquote>
+                        <blockquote class="testimonial-card reveal"><p>“Seeing first-nine average next to the overall average makes practice much more useful.”</p><footer>Club player</footer></blockquote>
+                        <blockquote class="testimonial-card reveal"><p>“It gives friendly games the structure of match night without making things complicated.”</p><footer>Casual darts player</footer></blockquote>
                     </div>
                 </div>
+            </section>
 
-                <div class="cta-section">
-                    <h2>Ready to Revolutionize Your Dart Experience?</h2>
-                    <p>Contact us today to learn more about implementing count501 in your venue or organization.</p>
-                    <div class="cta-button">
-                        <a href="./contact.html" class="button">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </section>
+            <section class="section-tight"><div class="container"><div class="cta-panel reveal"><h2>Help us build the darts counter you want to use.</h2><a href="./contact.html" class="button button-arrow">Request beta access</a></div></div></section>
+        </main>
 
-        <div class="quote-container visible">
-            <blockquote class="quote-text">Technology and tradition, perfectly balanced.</blockquote>
-            <div class="quote-label">#countwithus</div>
-        </div>
-
-        <div class="logo-bar">
-            <div class="sliding-logos-container">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="../img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-section logo-section">
-                    <img src="../img/count501transparent.png" alt="Logo">
-                    <p>© count501</p>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-brand"><img src="../img/count501-wordmark.svg" alt="count501"><p>Smart scoring and honest performance insights for people who love darts.</p></div>
+                    <div class="footer-column"><h3>Explore</h3><ul><li><a href="../index.html">Home</a></li><li><a href="./about-us.html">About</a></li><li><a href="./project-info.html">Product</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+                    <div class="footer-column"><h3>Legal</h3><ul><li><a href="../legal/privacy.html">Privacy</a></li><li><a href="../legal/imprint.html">Imprint</a></li></ul></div>
                 </div>
-                <div class="footer-section links-section">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="./about-us.html">About us</a></li>
-                        <li><a href="./project-info.html">Project Information</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social-section">
-                    <h3>Legal & Social</h3>
-                    <ul>
-                        <li><a href="../legal/privacy.html">Privacy</a></li>
-                        <li><a href="../legal/imprint.html">Imprint</a></li>
-                    </ul>
-                    <div class="social-icons">
-                        <a href="" target="_blank">
-                            <img src="../img/Instagram_icon.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="" target="_blank">
-                            <img src="../img/XLogo.png" alt="X" class="social-icon">
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-bottom"><span>© 2026 count501. All rights reserved.</span><span class="footer-tag">Track. Improve. Win.</span></div>
             </div>
         </footer>
     </body>
