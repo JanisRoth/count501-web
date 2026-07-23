@@ -1,228 +1,88 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C48WNMCT8H"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-C48WNMCT8H');
-        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Imprint | count501</title>
-        <link rel="icon" href="../img/Logoback.png" type="image/x-icon">
+        <meta name="theme-color" content="#0d0d0c">
+        <meta name="robots" content="noindex">
+        <title>Imprint — count501</title>
+        <link rel="icon" href="../img/Logoback.png">
         <link rel="stylesheet" href="../css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <script src="../js/script.js" defer></script>
-        <style>
-            .back-button {
-                display: inline-flex;
-                align-items: center;
-                padding: 0.5rem 1rem;
-                color: white;
-                text-decoration: none;
-                font-weight: 500;
-                transition: all 0.3s ease;
-            }
-            
-            .back-button:hover {
-                opacity: 0.8;
-            }
-            
-            .back-button svg {
-                margin-right: 0.5rem;
-            }
-            
-            .legal-content {
-                max-width: 800px;
-                margin: 0 auto;
-                padding: 2rem;
-            }
-            
-            .legal-content h2 {
-                color: #e74c3c;
-                margin-top: 2rem;
-                font-family: 'Bebas Neue', sans-serif;
-                font-size: 2rem;
-            }
-            
-            .legal-content h3 {
-                margin-top: 1.5rem;
-                font-family: 'Bebas Neue', sans-serif;
-                font-size: 1.5rem;
-            }
-            
-            .legal-content p, .legal-content address {
-                margin-bottom: 1rem;
-                line-height: 1.6;
-            }
-            
-            .legal-content address {
-                font-style: normal;
-            }
-            
-            .legal-section {
-                margin-bottom: 2.5rem;
-            }
-        </style>
     </head>
     <body>
-        <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../img/Logoback.png" alt="Logo">
-            </a>
-
-            <a href="javascript:history.back()" class="back-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M19 12H5M12 19l-7-7 7-7"/>
-                </svg>
-                Back
-            </a>
-
-            <div class="theme-switch-wrapper">
-                <span class="theme-icon">🌞</span> <!-- Icon for Light mode -->
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle" />
-                    <span class="slider"></span>
-                </label>
-                <span class="theme-icon">🌙</span> <!-- Icon for Dark mode -->
-            </div>
-            
-            <script>
-                const toggleButton = document.getElementById('theme-toggle');
-              
-                // Check the saved theme or system preference and apply the appropriate theme on page load
-                document.addEventListener('DOMContentLoaded', () => {
-                  const savedTheme = localStorage.getItem('theme');
-                  if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    toggleButton.checked = true;
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    toggleButton.checked = false;
-                  }
-                });
-              
-                // Toggle theme on switch change and save the preference
-                toggleButton.addEventListener('change', () => {
-                  if (toggleButton.checked) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                  }
-                });
-            </script>              
-        </div>
-
-        <section class="page-header">
-            <div class="page-header-overlay"></div>
-            <div class="page-header-content">
-                <h1>Imprint</h1>
-                <p>Legal information about count501</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="legal-content">
-                <div class="legal-section">
-                    <h2>Company Information</h2>
-                    <address>
-                        count501<br>
-                        Rothmettlen 19<br>
-                        3664 Burgistein<br>
-                        Switzerland
-                    </address>
-                    
-                    <p>
-                        <strong>Email:</strong> count501legal@gmail.com<br>
-                        <strong>Phone:</strong> +41 77 478 47 16
-                    </p>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header">
+            <nav class="nav-container" aria-label="Primary navigation">
+                <a href="../index.html" class="logo" aria-label="count501 home"><img src="../img/count501-wordmark.svg" alt="count501"></a>
+                <div class="menu" id="navLinks"><a href="../index.html">Home</a><a href="../html/about-us.html">About</a><a href="../html/project-info.html">Product</a><a href="../html/contact.html">Contact</a></div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" aria-label="Switch color theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                    </button>
+                    <a href="../html/contact.html" class="button">Get beta access</a>
+                    <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
                 </div>
-                
-                <div class="legal-section">
-                    <h2>Represented by</h2>
-                    <p>Janis Roth, CEO<br>
-                    Nino Etique, CTO<br>
-                    Patrick Fröhlin, Lead Developer</p>
-                </div>
+            </nav>
+        </header>
 
-                <div class="legal-section">
-                    <h2>Responsible for content according to § 55 Abs. 2 RStV</h2>
-                    <address>
-                        Janis Roth<br>
-                        count501<br>
-                        Rothmettlen 19<br>
-                        3664 Burgistein<br>
-                        Switzerland
-                    </address>
+        <main id="main">
+            <section class="page-hero">
+                <div class="container">
+                    <a class="back-link" href="../index.html">← Back to count501</a>
+                    <span class="eyebrow">Legal information</span>
+                    <h1>Imprint.</h1>
+                    <p>Information about the people responsible for count501 and this website.</p>
                 </div>
+            </section>
+            <section class="section">
+                <div class="container legal-content">
+                    <section class="legal-section">
+                        <h2>Company information</h2>
+                        <address>count501<br>Rothmettlen 19<br>3664 Burgistein<br>Switzerland</address>
+                        <p><strong>Email:</strong> <a href="mailto:count501legal@gmail.com">count501legal@gmail.com</a><br><strong>Phone:</strong> <a href="tel:+41774784716">+41 77 478 47 16</a></p>
+                    </section>
+                    <section class="legal-section">
+                        <h2>Represented by</h2>
+                        <p>Janis Roth, CEO<br>Nino Etique, CTO<br>Patrick Fröhlin, Lead Developer</p>
+                    </section>
+                    <section class="legal-section">
+                        <h2>Responsible for content</h2>
+                        <address>Janis Roth<br>count501<br>Rothmettlen 19<br>3664 Burgistein<br>Switzerland</address>
+                    </section>
+                    <section class="legal-section">
+                        <h2>Dispute resolution</h2>
+                        <p>The European Commission provides a platform for online dispute resolution at <a href="https://ec.europa.eu/consumers/odr/" rel="noopener noreferrer" target="_blank">ec.europa.eu/consumers/odr</a>.</p>
+                        <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+                    </section>
+                    <section class="legal-section">
+                        <h2>Liability for content</h2>
+                        <p>As service providers, we are liable for our own content on these pages according to general laws. However, we are not obliged to monitor transmitted or stored third-party information or to investigate circumstances indicating illegal activity.</p>
+                        <p>Obligations to remove or block the use of information under general laws remain unaffected. Liability in this regard is only possible from the moment we become aware of a specific legal violation. Upon notification of such violations, we will remove the content immediately.</p>
+                    </section>
+                    <section class="legal-section">
+                        <h2>Liability for links</h2>
+                        <p>Our website may contain links to external websites whose content we cannot influence. The respective provider or operator is always responsible for linked content. Linked pages were checked for possible legal violations at the time of linking.</p>
+                        <p>Permanent monitoring of linked pages is not reasonable without specific indications of a violation. Upon notification of violations, we will remove such links immediately.</p>
+                    </section>
+                    <section class="legal-section">
+                        <h2>Copyright</h2>
+                        <p>The content and works created by the website operators are subject to Swiss copyright law. Reproduction, processing, distribution or commercialization beyond the scope of copyright law requires the prior written consent of the respective author or creator.</p>
+                        <p>Where content was not created by the operator, third-party copyrights are respected. If you become aware of a copyright infringement, please inform us. Upon notification, we will remove infringing content immediately.</p>
+                    </section>
+                </div>
+            </section>
+        </main>
 
-                <div class="legal-section">
-                    <h2>Dispute Resolution</h2>
-                    <p>The European Commission provides a platform for online dispute resolution (OS): <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a></p>
-                    <p>We are not willing or obliged to participate in dispute resolution proceedings before a consumer arbitration board.</p>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-brand"><img src="../img/count501-wordmark.svg" alt="count501"><p>Smart scoring and honest performance insights for people who love darts.</p></div>
+                    <div class="footer-column"><h3>Explore</h3><ul><li><a href="../index.html">Home</a></li><li><a href="../html/about-us.html">About</a></li><li><a href="../html/project-info.html">Product</a></li><li><a href="../html/contact.html">Contact</a></li></ul></div>
+                    <div class="footer-column"><h3>Legal</h3><ul><li><a href="./privacy.html">Privacy</a></li><li><a href="./imprint.html">Imprint</a></li></ul></div>
                 </div>
-
-                <div class="legal-section">
-                    <h2>Liability for Contents</h2>
-                    <p>As service providers, we are liable for own contents of these websites according to general laws. However, we are not obliged to monitor transmitted or stored information or to investigate circumstances pointing to illegal activity.</p>
-                    <p>Obligations to remove or block the use of information under general laws remain unaffected. A liability in this regard is only possible from the moment of knowledge of a specific legal violation. Upon notification of such violations, we will remove the content immediately.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>Liability for Links</h2>
-                    <p>Our offer contains links to external websites, the content of which we have no influence on. Therefore, we cannot assume any liability for these external contents. The respective provider or operator of the pages is always responsible for the content of the linked pages. The linked pages were checked for possible legal violations at the time of linking. Illegal contents were not recognizable at the time of linking.</p>
-                    <p>However, a permanent control of the contents of the linked pages is not reasonable without concrete indications of a violation. Upon notification of violations, we will remove such links immediately.</p>
-                </div>
-
-                <div class="legal-section">
-                    <h2>Copyright</h2>
-                    <p>The contents and works on these pages created by the site operators are subject to Swiss copyright law. Duplication, processing, distribution, or any form of commercialization of such material beyond the scope of the copyright law shall require the prior written consent of its respective author or creator. Downloads and copies of these pages are only permitted for private, non-commercial use.</p>
-                    <p>Insofar as the content on this site was not created by the operator, the copyrights of third parties are respected. In particular, third-party content is marked as such. Should you nevertheless become aware of a copyright infringement, please inform us accordingly. Upon notification of violations, we will remove such content immediately.</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="quote-container visible">
-            <blockquote class="quote-text">We don't create something new we create something better.</blockquote>
-            <div class="quote-label">#countwithus</div>
-        </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-section logo-section">
-                    <img src="../img/count501transparent.png" alt="Logo">
-                    <p>© count501</p>
-                </div>
-                <div class="footer-section links-section">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="../html/about-us.html">About us</a></li>
-                        <li><a href="../html/project-info.html">Project Information</a></li>
-                        <li><a href="../html/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social-section">
-                    <h3>Legal & Social</h3>
-                    <ul>
-                        <li><a href="privacy.html">Privacy</a></li>
-                        <li><a href="imprint.html">Imprint</a></li>
-                    </ul>
-                    <div class="social-icons">
-                        <a href="" target="_blank">
-                            <img src="../img/Instagram_icon.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="" target="_blank">
-                            <img src="../img/XLogo.png" alt="X" class="social-icon">
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-bottom"><span>© 2026 count501. All rights reserved.</span><span class="footer-tag">Track. Improve. Win.</span></div>
             </div>
         </footer>
     </body>
