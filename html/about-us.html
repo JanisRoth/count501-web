@@ -1,199 +1,95 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C48WNMCT8H"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-C48WNMCT8H');
-        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>About Us | count501</title>
-        <link rel="icon" href="../img/Logoback.png" type="image/x-icon">
+        <meta name="description" content="Meet the team and the idea behind count501.">
+        <meta name="theme-color" content="#0d0d0c">
+        <title>About — count501</title>
+        <link rel="icon" href="../img/Logoback.png">
         <link rel="stylesheet" href="../css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <script src="../js/script.js" defer></script>
     </head>
     <body>
-        <div class="nav-container">
-            <a href="../index.html" class="logo">
-                <img src="../img/Logoback.png" alt="Logo">
-            </a>
-
-            <div class="menu" id="navLinks">
-                <a href="../index.html">Home</a>
-                <a href="./about-us.html" class="active">About us</a>
-                <a href="./project-info.html">Project Information</a>
-                <a href="./contact.html">Contact</a>
-            </div>
-
-            <div class="theme-switch-wrapper">
-                <span class="theme-icon">🌞</span> <!-- Icon for Light mode -->
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle" />
-                    <span class="slider"></span>
-                </label>
-                <span class="theme-icon">🌙</span> <!-- Icon for Dark mode -->
-            </div>
-            
-            <script>
-                const toggleButton = document.getElementById('theme-toggle');
-              
-                // Check the saved theme or system preference and apply the appropriate theme on page load
-                document.addEventListener('DOMContentLoaded', () => {
-                  const savedTheme = localStorage.getItem('theme');
-                  if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    toggleButton.checked = true;
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    toggleButton.checked = false;
-                  }
-                });
-              
-                // Toggle theme on switch change and save the preference
-                toggleButton.addEventListener('change', () => {
-                  if (toggleButton.checked) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                  }
-                });
-            </script>              
-
-            <button class="burger-menu" onclick="toggleMenu()">&#9776;</button>
-        </div>
-
-        <section class="page-header">
-            <div class="page-header-overlay"></div>
-            <div class="page-header-content">
-                <h1>About Us</h1>
-                <p>The team behind count501</p>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="about-container">
-                <div class="about-intro">
-                    <h2>Our Vision</h2>
-                    <p>At count501, we're passionate about revolutionizing the way dart games are played, scored, and experienced. Our innovative approach combines cutting-edge technology with the traditional spirit of darts to create a seamless, enjoyable, and competitive environment for players of all skill levels.</p>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header">
+            <nav class="nav-container" aria-label="Primary navigation">
+                <a href="../index.html" class="logo" aria-label="count501 home"><img src="../img/count501-wordmark.svg" alt="count501"></a>
+                <div class="menu" id="navLinks">
+                    <a href="../index.html">Home</a><a href="./about-us.html" class="active" aria-current="page">About</a><a href="./project-info.html">Product</a><a href="./contact.html">Contact</a>
                 </div>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" aria-label="Switch color theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                    </button>
+                    <a href="./contact.html" class="button">Get beta access</a>
+                    <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+                </div>
+            </nav>
+        </header>
 
-                <div class="team-section">
-                    <h2>Meet Our Team</h2>
-                    <div class="team-members">
-                        <div class="team-member">
-                            <!--<div class="member-image">
-                                <img src="../img/Janis_mku.jpeg" alt="Team Member">
-                            </div>-->
-                            <h3>Janis Roth</h3>
-                            <p class="member-role">Founder & CEO</p>
-                            <p>With over 2 years of experience in both professional dart competitions and software development, Janis brings unique insights to our technological solutions.</p>
-                        </div>
+        <main id="main">
+            <section class="page-hero">
+                <div class="container">
+                    <span class="eyebrow">People behind the product</span>
+                    <h1>Built by players,<br><span class="accent">for players.</span></h1>
+                    <p>Three friends combining software, computer vision and a genuine love for darts to make every match more meaningful.</p>
+                </div>
+            </section>
 
-                        <div class="team-member">
-                            <!--<div class="member-image">
-                                <img src="../img/Nino_mku.jpeg" alt="Team Member">
-                            </div>-->
-                            <h3>Nino Etique</h3>
-                            <p class="member-role">CTO</p>
-                            <p>Nino's background in computer vision and technologies forms the foundation of our dart detection and scoring technology.</p>
-                        </div>
-
-                        <div class="team-member">
-                            <!--<div class="member-image">
-                                <img src="../img/Pädi_mku.jpeg" alt="Team Member">
-                            </div>-->
-                            <h3>Patrick Fröhlin</h3>
-                            <p class="member-role">Lead Developer</p>
-                            <p>Patrick ensures that our technology enhances the dart experience while maintaining the conventional software development guidelines.</p>
-                        </div>
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <div><span class="eyebrow">The crew</span><h2>Small team.<br>Clear ambition.</h2></div>
+                        <p>We bring different perspectives to the same goal: a scoring experience that feels as focused as standing at the oche.</p>
+                    </div>
+                    <div class="team-grid">
+                        <article class="person-card reveal"><div class="person-avatar">JR</div><h3>Janis Roth</h3><p class="role">Founder & CEO</p><p>Darts player and software developer turning a personal project into a product built around real players.</p></article>
+                        <article class="person-card reveal"><div class="person-avatar">NE</div><h3>Nino Etique</h3><p class="role">CTO</p><p>Focused on computer vision and the technology that makes precise, intuitive scoring possible.</p></article>
+                        <article class="person-card reveal"><div class="person-avatar">PF</div><h3>Patrick Fröhlin</h3><p class="role">Lead Developer</p><p>Building a reliable product foundation and making sure every feature remains simple to use.</p></article>
                     </div>
                 </div>
+            </section>
 
-                <div class="our-story">
-                    <h2>Our Story</h2>
-                    <div class="story-content">
-                        <div class="story-image">
-                            <img src="../img/Logoback.png" alt="Our Story">
+            <section class="section-tight">
+                <div class="container">
+                    <article class="story-panel reveal">
+                        <img src="../img/darts-8905121_1920.jpg" alt="Darts embedded in a board">
+                        <div class="story-copy">
+                            <span class="eyebrow">Our story</span>
+                            <h2>It started with one simple question.</h2>
+                            <p>When Janis was looking for a new software project, he kept coming back to darts. Existing counters recorded scores, but rarely helped players understand what those scores meant. Nino and Patrick joined in, and count501 took shape.</p>
+                            <p>Since then, the project has been guided by hands-on testing, constant iteration and one rule: technology should enhance the game without changing its character.</p>
                         </div>
-                        <div class="story-text">
-                            <p>Count501 began, when Janis was looking for a new software development project. Since he plays darts for a hobby, the idea of a new dart counter came to his mind. After thinking about the idea and talking to his friends about the project, Nino and Patrick jumped in.</p>
-                            <p>Our journey has been marked by constant innovation, rigorous testing with ambitioned players, and a commitment to enhancing the game without changing its essence. Today, we're proud to offer solutions that are trusted by casual players and professionals alike.</p>
-                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <div><span class="eyebrow">What guides us</span><h2>Three values.<br>Every decision.</h2></div>
+                    </div>
+                    <div class="values-grid">
+                        <article class="value-card reveal"><div class="value-icon">01</div><h3>Precision</h3><p>Accuracy matters—from every entered throw to every statistic we show.</p></article>
+                        <article class="value-card reveal"><div class="value-icon">02</div><h3>Progress</h3><p>Useful technology should help people see, understand and improve their game.</p></article>
+                        <article class="value-card reveal"><div class="value-icon">03</div><h3>Community</h3><p>Darts is social. We build for friendly matches, ambitious practice and everything between.</p></article>
                     </div>
                 </div>
+            </section>
 
-                <div class="values-section">
-                    <h2>Our Values</h2>
-                    <div class="values-container">
-                        <div class="value-card">
-                            <div class="value-icon">🎯</div>
-                            <h3>Precision</h3>
-                            <p>We're committed to accuracy in everything we do, from our technology to our business practices.</p>
-                        </div>
-                        <div class="value-card">
-                            <div class="value-icon">🔄</div>
-                            <h3>Innovation</h3>
-                            <p>We constantly seek new ways to improve the dart experience without compromising tradition.</p>
-                        </div>
-                        <div class="value-card">
-                            <div class="value-icon">🤝</div>
-                            <h3>Community</h3>
-                            <p>We believe in building and supporting the global community of dart enthusiasts.</p>
-                        </div>
-                    </div>
+            <section class="section-tight"><div class="container"><div class="cta-panel reveal"><h2>Want to shape the future of count501?</h2><a href="./contact.html" class="button button-arrow">Join the beta</a></div></div></section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="container">
+                <div class="footer-main">
+                    <div class="footer-brand"><img src="../img/count501-wordmark.svg" alt="count501"><p>Smart scoring and honest performance insights for people who love darts.</p></div>
+                    <div class="footer-column"><h3>Explore</h3><ul><li><a href="../index.html">Home</a></li><li><a href="./about-us.html">About</a></li><li><a href="./project-info.html">Product</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+                    <div class="footer-column"><h3>Legal</h3><ul><li><a href="../legal/privacy.html">Privacy</a></li><li><a href="../legal/imprint.html">Imprint</a></li></ul></div>
                 </div>
-            </div>
-        </section>
-
-        <div class="quote-container visible">
-            <blockquote class="quote-text">Precision is our passion, innovation is our dart.</blockquote>
-            <div class="quote-label">#countwithus</div>
-        </div>
-
-        <div class="logo-bar">
-            <div class="sliding-logos-container">
-
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-section logo-section">
-                    <img src="../img/count501transparent.png" alt="Logo">
-                    <p>© count501</p>
-                </div>
-                <div class="footer-section links-section">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="../index.html">Home</a></li>
-                        <li><a href="./about-us.html">About us</a></li>
-                        <li><a href="./project-info.html">Project Information</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social-section">
-                    <h3>Legal & Social</h3>
-                    <ul>
-                        <li><a href="../legal/privacy.html">Privacy</a></li>
-                        <li><a href="../legal/imprint.html">Imprint</a></li>
-                    </ul>
-                    <div class="social-icons">
-                        <a href="" target="_blank">
-                            <img src="../img/Instagram_icon.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="" target="_blank">
-                            <img src="../img/XLogo.png" alt="X" class="social-icon">
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-bottom"><span>© 2026 count501. All rights reserved.</span><span class="footer-tag">Track. Improve. Win.</span></div>
             </div>
         </footer>
     </body>
