@@ -1,78 +1,116 @@
-function toggleMenu() {
-    document.getElementById("navLinks").classList.toggle("active");
+const root = document.documentElement;
+const menu = document.getElementById("navLinks");
+const menuButton = document.querySelector(".burger-menu");
+const themeButton = document.querySelector(".theme-toggle");
+
+const savedTheme = localStorage.getItem("count501-theme");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
+    root.setAttribute("data-theme", "dark");
 }
 
-document.addEventListener('click', function(event) {
-    const navLinks = document.getElementById("navLinks");
-    const burgerMenu = document.querySelector(".burger-menu");
-    
-    if (navLinks.classList.contains("active") && 
-        !navLinks.contains(event.target) && 
-        !burgerMenu.contains(event.target)) {
-        navLinks.classList.remove("active");
-    }
-});
-
-document.getElementById("navLinks").addEventListener('click', function(event) {
-    event.stopPropagation();
-});
-
-// Base64-codierte Liste verbotener Begriffe
-const verboteneWoerterEncoded = [
-    "bmlnZ2Vy",  // nigger
-    "bmlnZ2E=",  // nigga
-    "bmVnZXI=",  // neger
-    "c2NoZWlzc2U=",  // scheisse
-    "YXJzY2g=",      // arsch
-    "aHVyZQ==",      // hure
-    "aHVyZW5zb2hu",  // hurensohn
-    "c2NoZWlzc2U=",  // scheisse
-    "d2ljaHNlcg==",  // wichser
-    "c2NobGFtcGU=",  // schlampe
-    "bWlzdGtlcmw=",  // mistkerl
-    "dnZpY2hzZXI=",  // wichser (Variante)
-    "YXNzaG9sZQ==",  // asshole
-    "YnVsbHNoaXQ=",  // bullshit
-    "Y3VudA==",      // cunt
-    "ZGlja2hlYWQ=",  // dickhead
-    "ZnVjaw==",      // fuck
-    "c2hpdA==",      // shit
-    "d2hvcmU=",      // whore
-    "YmFzdGFyZA==",  // bastard
-    "ZG91Y2hl",      // douche
-    "YXNz",          // ass
-    "c2ltZXg=",      // simex
-    "a2lrZQ==",      // kike
-    "Y2hpbms=",      // chink
-    "c3BpYw==",      // spic
-    "ZmFn",          // fag
-    "ZmFnZ290",      // faggot
-    "c2NodyB1Y2h0ZWw=", // schwuchtel
-    "a3JwcGVs",      // krüppel
-    "cmV0YXJk",      // retard
-    "c3Bh"           // spa
-];
-
-const verboteneWörter = verboteneWoerterEncoded.map(w => atob(w));
-
-const formular = document.getElementById("kontaktformular");
-const textAnliegen = document.getElementById("anliegen");
-
-const warnung = document.createElement("p");
-warnung.style.color = "red";
-warnung.style.fontWeight = "bold";
-textAnliegen.parentNode.insertBefore(warnung, textAnliegen.nextSibling);
-
-formular.addEventListener("submit", function (e) {
-const eingabe = textAnliegen.value.toLowerCase();
-
-for (const wort of verboteneWörter) {
-    if (eingabe.includes(wort)) {
-    e.preventDefault();
-    warnung.textContent = `Please do not use offensive or discriminatory language.`;
-    return;
-    }
+function updateThemeLabel() {
+    if (!themeButton) return;
+    const isDark = root.getAttribute("data-theme") === "dark";
+    themeButton.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
 }
 
-warnung.textContent = "";
-});
+function closeMenu() {
+    if (!menu || !menuButton) return;
+    menu.classList.remove("active");
+    menuButton.setAttribute("aria-expanded", "false");
+}
+
+if (themeButton) {
+    updateThemeLabel();
+    themeButton.addEventListener("click", () => {
+        const isDark = root.getAttribute("data-theme") === "dark";
+        if (isDark) {
+            root.removeAttribute("data-theme");
+            localStorage.setItem("count501-theme", "light");
+        } else {
+            root.setAttribute("data-theme", "dark");
+            localStorage.setItem("count501-theme", "dark");
+        }
+        updateThemeLabel();
+    });
+}
+
+if (menu && menuButton) {
+    menuButton.addEventListener("click", () => {
+        const isOpen = menu.classList.toggle("active");
+        menuButton.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    menu.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+
+    document.addEventListener("click", (event) => {
+        if (!menu.contains(event.target) && !menuButton.contains(event.target)) closeMenu();
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeMenu();
+    });
+}
+
+const revealObserver = new IntersectionObserver(
+    (entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    },
+    { threshold: 0.12 }
+);
+
+document.querySelectorAll(".reveal").forEach((element) => revealObserver.observe(element));
+
+const cookieBanner = document.getElementById("cookie-banner");
+const acceptCookies = document.getElementById("accept-cookies");
+
+if (cookieBanner && !localStorage.getItem("count501-cookies")) {
+    cookieBanner.classList.add("is-visible");
+}
+
+if (acceptCookies) {
+    acceptCookies.addEventListener("click", () => {
+        localStorage.setItem("count501-cookies", "accepted");
+        cookieBanner?.classList.remove("is-visible");
+    });
+}
+
+const contactForm = document.getElementById("kontaktformular");
+const messageField = document.getElementById("anliegen");
+
+if (contactForm && messageField) {
+    const blockedTerms = [
+        "bmlnZ2Vy",
+        "bmlnZ2E=",
+        "c2NoZWlzc2U=",
+        "aHVyZW5zb2hu",
+        "ZnVjaw==",
+        "Y3VudA==",
+        "ZmFnZ290",
+    ].map((term) => atob(term));
+
+    const warning = document.createElement("p");
+    warning.className = "form-warning";
+    warning.setAttribute("role", "alert");
+    messageField.parentNode.appendChild(warning);
+
+    contactForm.addEventListener("submit", (event) => {
+        const message = messageField.value.toLowerCase();
+        const containsBlockedTerm = blockedTerms.some((term) => message.includes(term));
+
+        if (containsBlockedTerm) {
+            event.preventDefault();
+            warning.textContent = "Please keep your message respectful so our team can help.";
+            messageField.focus();
+        } else {
+            warning.textContent = "";
+        }
+    });
+}
