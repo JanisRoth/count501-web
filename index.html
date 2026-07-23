@@ -1,286 +1,184 @@
-<!DOCTYPE html>
-<html lang="de">
+<!doctype html>
+<html lang="en">
     <head>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C48WNMCT8H"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-C48WNMCT8H');
-        </script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>count501</title>
-        <link rel="icon" href="./img/Logoback.png" type="image/x-icon">
+        <meta name="description" content="count501 is a focused darts scoring platform with live games, detailed statistics and meaningful performance insights.">
+        <meta name="theme-color" content="#0d0d0c">
+        <title>count501 — Track. Improve. Win.</title>
+        <link rel="icon" href="./img/Logoback.png">
         <link rel="stylesheet" href="./css/styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
         <script src="./js/script.js" defer></script>
-        <meta name="description" content="COUNT501 is the most advanced online dart counter for 501 games. Track scores, calculate averages, analyze statistics, and improve your darts performance with our free, mobile-friendly dart scoring app.">
-        <meta name="keywords" content="dart counter online, 501 dart scorer, dart statistics tracker, dart checkout calculator, online dart scoreboard, darts average calculator, dart scoring app, free dart counter, mobile dart scorer, dart checkout percentage, count501">
-        <meta name="author" content="Janis Roth">
-
-        <style>
-            #cookie-banner {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            right: 20px;
-            background: #fff5e9;
-            border: 2px solid #b73e24;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            border-radius: 12px;
-            z-index: 1000;
-            padding: 1rem;
-            font-family: Arial, sans-serif;
-            color: #222;
-            animation: fadeIn 0.5s ease-in-out;
-            }
-        
-            .cookie-box {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 0.5rem;
-            text-align: center;
-            }
-        
-            .cookie-link {
-            color: #b73e24;
-            text-decoration: underline;
-            font-weight: 500;
-            }
-        
-            .cookie-buttons button {
-            background-color: #b73e24;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            transition: background-color 0.2s ease-in-out;
-            }
-        
-            .cookie-buttons button:hover {
-            background-color: #922d19;
-            }
-        
-            @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-            }
-        </style>
-        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-C48WNMCT8H"></script>
         <script>
-            document.addEventListener("DOMContentLoaded", () => {
-            if (!localStorage.getItem("cookiesAccepted")) {
-                document.getElementById("cookie-banner").style.display = "block";
-            }
-        
-            document.getElementById("accept-cookies").addEventListener("click", () => {
-                localStorage.setItem("cookiesAccepted", "true");
-                document.getElementById("cookie-banner").style.display = "none";
-            });
-            });
-        </script> 
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag("js", new Date());
+            gtag("config", "G-C48WNMCT8H");
+        </script>
     </head>
     <body>
-        <div class="nav-container">
-            <a href="index.html" class="logo">
-                <img src="./img/Logoback.png" alt="Logo">
-            </a>
-
-            <div class="menu" id="navLinks">
-                <a href="index.html" class="active">Home</a>
-                <a href="./html/about-us.html">About us</a>
-                <a href="./html/project-info.html">Project Information</a>
-                <a href="./html/contact.html">Contact</a>
-            </div>
-
-            <div class="theme-switch-wrapper">
-                <span class="theme-icon">🌞</span> <!-- Icon for Light mode -->
-                <label class="theme-switch">
-                    <input type="checkbox" id="theme-toggle" />
-                    <span class="slider"></span>
-                </label>
-                <span class="theme-icon">🌙</span> <!-- Icon for Dark mode -->
-            </div>
-            
-            <script>
-                const toggleButton = document.getElementById('theme-toggle');
-              
-                // Check the saved theme or system preference and apply the appropriate theme on page load
-                document.addEventListener('DOMContentLoaded', () => {
-                  const savedTheme = localStorage.getItem('theme');
-                  if (savedTheme === 'dark' || (savedTheme === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    toggleButton.checked = true;
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    toggleButton.checked = false;
-                  }
-                });
-              
-                // Toggle theme on switch change and save the preference
-                toggleButton.addEventListener('change', () => {
-                  if (toggleButton.checked) {
-                    document.body.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                  } else {
-                    document.body.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                  }
-                });
-            </script>              
-
-            <button class="burger-menu" onclick="toggleMenu()">&#9776;</button>
-        </div>
-
-        <section class="hero">
-            <video class="hero-video" autoplay loop muted playsinline>
-                <source src="./img/bullseyevid.mov" type="video/mp4">
-                Ihr Browser unterstützt kein HTML5-Video.
-            </video>
-            <div class="hero-overlay"></div>
-            <div class="hero-content">
-                <h1 class="brand-name">COUNT501</h1>
-                <div class="tagline">TRACK. IMPROVE. WIN.</div>
-                <p class="hero-description">THE SMART WAY TO PLAY DARTS</p>
-                <div class="cta-button">
-                    <a href="./html/contact.html" class="button">REQUEST BETA ACCESS</a>
+        <a class="skip-link" href="#main">Skip to content</a>
+        <header class="site-header">
+            <nav class="nav-container" aria-label="Primary navigation">
+                <a href="./index.html" class="logo" aria-label="count501 home">
+                    <img src="./img/count501-wordmark.svg" alt="count501">
+                </a>
+                <div class="menu" id="navLinks">
+                    <a href="./index.html" class="active" aria-current="page">Home</a>
+                    <a href="./html/about-us.html">About</a>
+                    <a href="./html/project-info.html">Product</a>
+                    <a href="./html/contact.html">Contact</a>
                 </div>
-            </div>
-        </section>
+                <div class="nav-actions">
+                    <button class="theme-toggle" type="button" aria-label="Switch color theme">
+                        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+                        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3 7 7 0 0021 12.8z"/></svg>
+                    </button>
+                    <a href="./html/contact.html" class="button">Get beta access</a>
+                    <button class="burger-menu" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+                </div>
+            </nav>
+        </header>
 
-        <section class="seo-section">
+        <main id="main">
+            <section class="hero">
+                <div class="hero-media">
+                    <video autoplay loop muted playsinline poster="./img/darts-8905121_1920.jpg">
+                        <source src="./img/bullseyevid.mov" type="video/mp4">
+                    </video>
+                </div>
+                <div class="container hero-inner">
+                    <div class="hero-copy">
+                        <span class="eyebrow">Built for every throw</span>
+                        <h1>Know your game. <span>Own the oche.</span></h1>
+                        <p class="hero-description">A sharper way to score 501, understand your performance and turn every session into measurable progress.</p>
+                        <div class="hero-actions">
+                            <a href="./html/contact.html" class="button button-arrow">Request beta access</a>
+                            <a href="./html/project-info.html" class="button button-secondary">Explore the product</a>
+                        </div>
+                    </div>
+                    <aside class="score-card" aria-label="Example live game">
+                        <div class="score-card-top">
+                            <span>Leg 03 · Best of 5</span>
+                            <span class="live-dot">Live</span>
+                        </div>
+                        <div class="score-player">
+                            <div><strong>Janis</strong><small>2 legs</small></div>
+                            <span class="score-number">164</span>
+                        </div>
+                        <div class="score-player">
+                            <div><strong>Nino</strong><small>1 leg</small></div>
+                            <span class="score-number accent">221</span>
+                        </div>
+                        <div class="score-stats">
+                            <div class="score-stat"><span>Average</span><strong>68.4</strong></div>
+                            <div class="score-stat"><span>First 9</span><strong>74.2</strong></div>
+                            <div class="score-stat"><span>Checkout</span><strong>32%</strong></div>
+                        </div>
+                    </aside>
+                </div>
+                <div class="hero-foot">
+                    <span>Scroll to discover</span>
+                    <span>#countwithus</span>
+                </div>
+            </section>
+
+            <section class="section">
+                <div class="container">
+                    <div class="section-heading reveal">
+                        <div>
+                            <span class="eyebrow">More than a scoreboard</span>
+                            <h2>Every number tells<br>a story.</h2>
+                        </div>
+                        <p>count501 keeps scoring effortless while surfacing the details that help casual players and ambitious competitors improve.</p>
+                    </div>
+                    <div class="feature-grid">
+                        <article class="feature-card dark reveal">
+                            <span class="feature-index">01</span>
+                            <h3>Fast, focused scoring</h3>
+                            <p>Enter throws without breaking your rhythm. The interface stays out of your way and keeps the match moving.</p>
+                        </article>
+                        <article class="feature-card reveal">
+                            <span class="feature-index">02</span>
+                            <h3>Statistics that matter</h3>
+                            <p>Track three-dart average, first nine, checkout rate, high scores and the trends behind your form.</p>
+                        </article>
+                        <article class="feature-card reveal">
+                            <span class="feature-index">03</span>
+                            <h3>Built for competition</h3>
+                            <p>Play locally with friends, follow legs and sets, and keep every match in one clean history.</p>
+                        </article>
+                        <article class="feature-card accent-card reveal">
+                            <span class="feature-index">04</span>
+                            <h3>Progress you can see</h3>
+                            <p>Compare sessions and players, spot patterns and make your next practice session more intentional.</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section visual-section">
+                <div class="container visual-grid">
+                    <div class="visual-copy reveal">
+                        <span class="eyebrow">Performance, decoded</span>
+                        <h2>Less guessing.<br>More growing.</h2>
+                        <p>Your best game is hiding in the details. count501 turns every visit into clear, useful insight without burying you in noise.</p>
+                        <a href="./html/project-info.html" class="button button-arrow">See how it works</a>
+                    </div>
+                    <div class="analytics-panel reveal" aria-label="Example performance dashboard">
+                        <div class="metric wide">
+                            <span class="metric-label">Three-dart average · last 8 matches</span>
+                            <div class="bar-chart" aria-hidden="true">
+                                <span style="height:42%;--i:1"></span><span style="height:58%;--i:2"></span><span style="height:51%;--i:3"></span><span style="height:69%;--i:4"></span><span style="height:63%;--i:5"></span><span style="height:78%;--i:6"></span><span style="height:74%;--i:7"></span><span style="height:92%;--i:8"></span>
+                            </div>
+                        </div>
+                        <div class="metric"><span class="metric-label">Average</span><strong class="metric-value">68<small>.4</small></strong></div>
+                        <div class="metric"><span class="metric-label">Best checkout</span><strong class="metric-value">121</strong></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quote-block">
+                <div class="container reveal">
+                    <blockquote>“We don’t need to reinvent darts. We make every game smarter.”</blockquote>
+                    <p>#countwithus</p>
+                </div>
+            </section>
+
+            <section class="section-tight">
+                <div class="container">
+                    <div class="cta-panel reveal">
+                        <h2>Ready to make every throw count?</h2>
+                        <a href="./html/contact.html" class="button button-arrow">Join the beta</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
             <div class="container">
-                <div class="seo-text">
-                    <h2>count501: The #1 Online Dart Counter for Serious Players</h2>
-                    <p>
-                        Looking for the best 501 dart counter online? count501 is the ultimate dart scoring app built for players who demand more from their game. Our advanced dart counter tracks your 501 performance with precision, offering real-time statistics and analytics that traditional scorekeepers simply can't match.
-                    </p>
-                    <p>
-                        Whether you're practicing checkout strategies, tracking your three-dart average, or competing with friends, count501 provides the most comprehensive dart statistics available. From checkout percentages to first nine averages, our smart dart counter helps you identify patterns and improve your game with every throw.
-                    </p>
-                    <p>
-                        Join loads of dart players who already believe in count501. Free to use, mobile-friendly, and packed with features designed by dart players, for dart players. Track your progress. Improve your averages. Win more games. <span class="hashtag">#countwithus</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <div class="project-container">
-                <div class="cta-section">
-                    <h2>Want to discover more about our Project?</h2>
-                    <p>Find all information about count501 Summoned on one page.</p>
-                    <div class="cta-button">
-                        <a href="./html/project-info.html" class="button">Learn more</a>
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <img src="./img/count501-wordmark.svg" alt="count501">
+                        <p>Smart scoring and honest performance insights for people who love darts.</p>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Explore</h3>
+                        <ul><li><a href="./index.html">Home</a></li><li><a href="./html/about-us.html">About</a></li><li><a href="./html/project-info.html">Product</a></li><li><a href="./html/contact.html">Contact</a></li></ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Legal</h3>
+                        <ul><li><a href="./legal/privacy.html">Privacy</a></li><li><a href="./legal/imprint.html">Imprint</a></li></ul>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <div class="quote-container visible">
-            <blockquote class="quote-text">We don't create something new we create something better.</blockquote>
-            <div class="quote-label">#countwithus</div>
-        </div>
-
-        <div class="logo-bar">
-            <div class="sliding-logos-container">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-                <img src="./img/dartboard.webp" alt="count501 Logo" class="sliding-logo">
-            </div>
-        </div>
-
-        <footer>
-            <div class="footer-container">
-                <div class="footer-section logo-section">
-                    <img src="./img/count501transparent.png" alt="Logo">
-                    <p>© count501</p>
-                </div>
-                <div class="footer-section links-section">
-                    <h3>Links</h3>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="./html/about-us.html">About us</a></li>
-                        <li><a href="./html/project-info.html">Project Information</a></li>
-                        <li><a href="./html/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section social-section">
-                    <h3>Legal & Social</h3>
-                    <ul>
-                        <li><a href="./legal/privacy.html">Privacy</a></li>
-                        <li><a href="./legal/imprint.html">Imprint</a></li>
-                    </ul>
-                    <div class="social-icons">
-                        <a href="" target="_blank">
-                            <img src="./img/Instagram_icon.png" alt="Instagram" class="social-icon">
-                        </a>
-                        <a href="" target="_blank">
-                            <img src="./img/XLogo.png" alt="X" class="social-icon">
-                        </a>
-                    </div>
-                </div>
+                <div class="footer-bottom"><span>© 2026 count501. All rights reserved.</span><span class="footer-tag">Track. Improve. Win.</span></div>
             </div>
         </footer>
-        <!-- Cookie-Banner -->
-        <div id="cookie-banner" style="display:none;">
-            <div class="cookie-box">
-            <p>This website uses cookies to provide you the best possible experience. <a href="./legal/privacy.html" class="cookie-link">More information</a></p>
-            <div class="cookie-buttons">
-                <button id="accept-cookies">Accept</button>
-            </div>
-            </div>
-        </div> 
+
+        <aside id="cookie-banner" class="cookie-banner" aria-label="Cookie notice">
+            <p>We use cookies and analytics to understand how the site performs. Learn more in our <a href="./legal/privacy.html">privacy policy</a>.</p>
+            <button id="accept-cookies" class="button" type="button">Accept and continue</button>
+        </aside>
     </body>
 </html>
